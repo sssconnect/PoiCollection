@@ -355,11 +355,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (Marker m : allMarkersList) {
             builder.include(m.getPosition());
         }
-        LatLngBounds bounds = builder.build();
-        int padding = 80;
-        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-        mMap.moveCamera(cu);
-        mMap.animateCamera(cu);
+        if (allMarkersList.size() != 0) {
+            LatLngBounds bounds = builder.build();
+            int padding = 80;
+            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+            mMap.moveCamera(cu);
+            mMap.animateCamera(cu);
+        }else{
+            Toast.makeText(MapsActivity.this,R.string.no_marker_saved,Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

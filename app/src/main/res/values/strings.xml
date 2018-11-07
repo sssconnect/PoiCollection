@@ -36,5 +36,5 @@
     <string name="markerInserted">Poi is Saved</string>
     <string name="trafic_enabled">Traffic Enabled</string>
     <string name="trafic_disabled">Traffic Disabled</string>
-
+    <string name="no_marker_saved">No Poi Saved</string>
 </resources>
